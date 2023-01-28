@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.scheduleapp.c195task1.DBConnection.closeConnection;
-import static com.scheduleapp.c195task1.DBConnection.openConnection;
+import static Utility.DBConnection.closeConnection;
+import static Utility.DBConnection.openConnection;
 
 public class Main extends Application {
     @Override
@@ -22,7 +22,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         openConnection();
-        closeConnection();
         launch();
+        closeConnection();
     }
 }

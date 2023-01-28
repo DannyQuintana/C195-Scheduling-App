@@ -1,6 +1,7 @@
-package com.scheduleapp.c195task1;
+package Utility;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 
 public abstract class DBConnection {
@@ -21,10 +22,14 @@ public abstract class DBConnection {
             connection = DriverManager.getConnection(jdbcUrl, userName, password); // Reference Connection object
             System.out.println("Connection successful!");
         }
-        catch(Exception e)
+        catch(SQLException | ClassNotFoundException e)
         {
-            System.out.println("Error:" + e.getMessage());
+            e.printStackTrace();
         }
+    }
+
+    public static Connection getConnection(){
+        return connection;
     }
 
     public static void closeConnection() {
@@ -34,7 +39,7 @@ public abstract class DBConnection {
         }
         catch(Exception e)
         {
-            System.out.println("Error:" + e.getMessage());
+           //ignore
         }
     }
 }
