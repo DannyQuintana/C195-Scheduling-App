@@ -1,12 +1,12 @@
 package controller;
 
-import Utility.DBCountry;
+import DBUtility.DBCountry;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import model.Country;
 
-public class MainController {
+public class MainScreenController {
     @FXML
     private Label welcomeText;
 

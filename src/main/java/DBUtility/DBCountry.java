@@ -1,4 +1,4 @@
-package Utility;
+package DBUtility;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
