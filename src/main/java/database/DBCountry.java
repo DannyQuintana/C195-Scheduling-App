@@ -1,4 +1,4 @@
-package DBUtility;
+package database;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +11,19 @@ import java.sql.Timestamp;
 
 public class DBCountry {
 
+    //CRUD CREATE, READ UPDATE DELETE
+
+    //CREATE
+    public static int insert(String countryName, int countryId) throws SQLException {
+        String sql = "INSERT INTO COUNTRIES (COUNTRY, COUNTRY_ID) VALUES(?, ?)";
+        PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql);
+        ps.setString(1, countryName);
+        ps.setInt(2, countryId);
+
+        int rowsAffected = ps.executeUpdate();
+        return rowsAffected;
+    }
+    //Read
     public static ObservableList<Country> getAllCountries(){
         ObservableList<Country>   countryList = FXCollections.observableArrayList();
 
@@ -30,6 +43,28 @@ public class DBCountry {
         }
 
         return countryList;
+    }
+
+    //Update
+    public static int update(String countryName, int countryId) throws SQLException {
+        String sql = "UPDATE COUNTRIES SET COUNTRY = ? WHERE COUNTRY_ID = ?";
+        PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql);
+        ps.setString(1, countryName);
+        ps.setInt(2, countryId);
+
+        int rowsAffected = ps.executeUpdate();
+        return rowsAffected;
+
+    }
+
+    //Delete
+    public static int delete(int countryId) throws SQLException{
+        String sql = "DELETE FROM COUNTRIES WHERE COUNTRY_ID = ? ";
+        PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql);
+        ps.setInt(1, countryId);
+
+        int rowsAffected = ps.executeUpdate();
+        return rowsAffected;
     }
 
     public static void checkDateConversion(){

@@ -1,4 +1,4 @@
-package DBUtility;
+package database;
 
 public class DBCustomer {
 }

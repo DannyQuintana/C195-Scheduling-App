@@ -9,6 +9,6 @@ module com.scheduleapp.c195task1 {
     opens controller to javafx.fxml;
     exports com.scheduleapp.c195task1;
     opens com.scheduleapp.c195task1 to javafx.fxml;
-    exports DBUtility;
-    opens DBUtility to javafx.fxml;
+    exports database;
+    opens database to javafx.fxml;
 }
