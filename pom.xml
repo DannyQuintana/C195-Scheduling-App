@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.scheduleapp.c195task1/com.scheduleapp.c195task1.Main</mainClass>
+                            <mainClass>com.scheduleapp.c195task1/com.scheduleapp.main.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

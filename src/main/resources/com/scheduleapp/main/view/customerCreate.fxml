@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerCreateController">
+   <children>
+      <Label layoutX="24.0" layoutY="27.0" text="Add Customer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField disable="true" layoutX="82.0" layoutY="71.0" text="Auto Gen ID" />
+      <TextField fx:id="nameField" layoutX="82.0" layoutY="122.0" />
+      <TextField fx:id="addressField" layoutX="82.0" layoutY="179.0" />
+      <TextField fx:id="postalCodeField" layoutX="82.0" layoutY="240.0" />
+      <Label layoutX="18.0" layoutY="126.0" text="Name" />
+      <Label layoutX="26.0" layoutY="75.0" text="ID" />
+      <Label layoutX="18.0" layoutY="183.0" text="Address" />
+      <Label layoutX="16.0" layoutY="244.0" text="Postal Code" />
+      <Label layoutX="15.0" layoutY="300.0" text="phone" />
+      <TextField fx:id="phoneField" layoutX="82.0" layoutY="296.0" />
+      <Button layoutX="85.0" layoutY="483.0" mnemonicParsing="false" onAction="#submitCustomerBtn" text="Submit" />
+   </children>
+</AnchorPane>

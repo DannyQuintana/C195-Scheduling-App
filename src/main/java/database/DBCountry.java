@@ -15,13 +15,19 @@ public class DBCountry {
 
     //CREATE
     public static int insert(String countryName, int countryId) throws SQLException {
-        String sql = "INSERT INTO COUNTRIES (COUNTRY, COUNTRY_ID) VALUES(?, ?)";
-        PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql);
-        ps.setString(1, countryName);
-        ps.setInt(2, countryId);
+        int rowsAffected;
+        try {
+            String sql = "INSERT INTO COUNTRIES (COUNTRY, COUNTRY_ID) VALUES(?, ?)";
+            PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql);
+            ps.setString(1, countryName);
+            ps.setInt(2, countryId);
 
-        int rowsAffected = ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return rowsAffected;
+
     }
     //Read
     public static ObservableList<Country> getAllCountries(){

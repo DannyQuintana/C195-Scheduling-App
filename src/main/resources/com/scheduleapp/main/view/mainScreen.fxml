@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <Button layoutX="751.0" layoutY="539.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Reports" />
+      <Button layoutX="869.0" layoutY="539.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Exit" />
+      <TableView fx:id="customerTable" layoutX="16.0" layoutY="74.0" prefHeight="399.0" prefWidth="450.0">
+        <columns>
+            <TableColumn fx:id="customerIdCol" prefWidth="85.0" text="Customer Id" />
+            <TableColumn fx:id="customerNameCol" prefWidth="97.0" text="Customer Name" />
+            <TableColumn fx:id="customerAddressCol" prefWidth="71.0" text="Address" />
+            <TableColumn fx:id="customerPostalCol" prefWidth="78.0" text="Postal Code" />
+            <TableColumn fx:id="cusomterPhoneCol" prefWidth="117.0" text="Phone Number" />
+        </columns>
+      </TableView>
+      <TableView layoutX="500.0" layoutY="74.0" prefHeight="399.0" prefWidth="450.0">
+        <columns>
+            <TableColumn prefWidth="75.0" text="Customer Id" />
+            <TableColumn prefWidth="75.0" text="Customer Name" />
+            <TableColumn prefWidth="75.0" text="Address" />
+            <TableColumn prefWidth="75.0" text="Postal Code" />
+            <TableColumn prefWidth="75.0" text="Phone Number" />
+        </columns>
+      </TableView>
+      <Label layoutX="32.0" layoutY="38.0" text="Customers">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="522.0" layoutY="38.0" text="Appointments" />
+      <Button layoutX="32.0" layoutY="486.0" mnemonicParsing="false" onAction="#addCustomerClicked" text="Add Customer" />
+      <Button layoutX="177.0" layoutY="486.0" mnemonicParsing="false" onAction="#updateCustomerClicked" text="Update Customer" />
+      <Button layoutX="355.0" layoutY="486.0" mnemonicParsing="false" text="Delete Customer" />
+   </children>
+</AnchorPane>

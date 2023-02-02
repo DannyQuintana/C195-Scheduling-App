@@ -1,4 +1,4 @@
-package com.scheduleapp.c195task1;
+package com.scheduleapp.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,14 +16,12 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("view/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 450, 480);
-        stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) throws SQLException {
         openConnection();
-
         launch();
 
         closeConnection();

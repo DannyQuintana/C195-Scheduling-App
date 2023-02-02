@@ -1,4 +1,4 @@
-module com.scheduleapp.c195task1 {
+module com.scheduleapp.main {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
@@ -7,8 +7,13 @@ module com.scheduleapp.c195task1 {
 
     exports controller;
     opens controller to javafx.fxml;
-    exports com.scheduleapp.c195task1;
-    opens com.scheduleapp.c195task1 to javafx.fxml;
+
+    exports com.scheduleapp.main;
+    opens com.scheduleapp.main to javafx.fxml;
+
+    exports model;
+    opens model to javafx.base;
+
     exports database;
     opens database to javafx.fxml;
 }

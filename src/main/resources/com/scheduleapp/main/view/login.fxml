@@ -22,9 +22,8 @@
          </font>
       </Label>
       <TextField fx:id="userNameField" layoutX="41.0" layoutY="114.0" prefHeight="34.0" prefWidth="357.0" promptText="Enter user name" />
-      <TextField fx:id="passWordField" layoutX="41.0" layoutY="192.0" prefHeight="34.0" prefWidth="357.0" promptText="Enter password" />
-      <Button fx:id="login" layoutX="220.0" layoutY="396.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="40.0" prefWidth="72.0" text="Login" />
-      <Button fx:id="resetButton" layoutX="313.0" layoutY="396.0" mnemonicParsing="false" onAction="#resetClicked" prefHeight="40.0" prefWidth="64.0" text="Reset">
+      <Button fx:id="login" layoutX="202.0" layoutY="396.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="40.0" prefWidth="90.0" text="Login" />
+      <Button fx:id="resetButton" layoutX="313.0" layoutY="396.0" mnemonicParsing="false" onAction="#resetClicked" prefHeight="40.0" prefWidth="90.0" text="Reset">
          <font>
             <Font size="14.0" />
          </font>
@@ -53,6 +52,10 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label fx:id="timeZoneField" layoutX="117.0" layoutY="262.0" />
+      <Label fx:id="timeZoneField" layoutX="40.0" layoutY="298.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <PasswordField fx:id="passWordField" layoutX="41.0" layoutY="203.0" prefHeight="34.0" prefWidth="357.0" promptText="Enter Password" />
    </children>
 </AnchorPane>

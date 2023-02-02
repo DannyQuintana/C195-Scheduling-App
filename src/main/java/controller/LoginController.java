@@ -2,7 +2,7 @@ package controller;
 
 import database.DBConnection;
 import database.DBUser;
-import com.scheduleapp.c195task1.Main;
+import com.scheduleapp.main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +15,9 @@ import model.User;
 
 
 import java.net.URL;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -30,7 +33,13 @@ public class LoginController implements Initializable {
     @FXML private TextField userNameField;
     @FXML private Label timeZoneLabel;
 
+    public void getTimeZone(){
+        ZonedDateTime timeZone = ZonedDateTime.now();
+        String result = timeZone.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.FULL));
+        timeZoneField.setText(result);
 
+
+    }
     public void loginClicked(ActionEvent actionEvent) {
         try{
             String userName = userNameField.getText();
@@ -46,7 +55,10 @@ public class LoginController implements Initializable {
                 stage.setScene(scene);
                 stage.show();
             } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid login credentials.");
+                ResourceBundle bundle = ResourceBundle.getBundle("Login");
+                String errorMessage = bundle.getString("errorMessage");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(errorMessage);
                 alert.showAndWait();
             }
 
@@ -73,6 +85,7 @@ public class LoginController implements Initializable {
         timeZoneLabel.setText(bundle.getString("timeZone"));
         userNameField.setPromptText(bundle.getString("userNameField"));
         passWordField.setPromptText(bundle.getString("passWordField"));
+        getTimeZone();
     }
 
 
